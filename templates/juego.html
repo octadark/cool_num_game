@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Juego de Adivinanzas</title>
+</head>
+<body>
+    <h1> Juego de Adivinanzas </h1>
+    {%if mensaje%}
+        <p> {{mensaje}}</p>
+        {% if 'Felicitaciones' not in mensaje %}
+            <form method= "POST">
+                <input type="number" name="guess" min="1" max="100" requires>
+                <input type="submit" value="Adivinar">
+            </form>
+        {% endif %}
+        {% else %}
+        <p>¡Bienvenido! Adivina el número entre 1 y 100:</p>
+        <form method="POST">
+            <input type="number" name="guess" min="1" max="100" required>
+            <input type="submit" value="Adivinar">
+        </form>
+    {% endif %}
+</body>
+</html>
